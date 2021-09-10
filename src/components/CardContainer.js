@@ -8,10 +8,12 @@ const CardContainer = () => {
   useEffect(() => {
     const getNasaInfo = async () => {
       const res = await getNasaAPOD();
-      setNasaInfo(res);
+      setNasaInfo([res.data]);
     };
     getNasaInfo();
-  });
+  }, []);
+
+  console.log(nasaInfo);
 
   return (
     <>

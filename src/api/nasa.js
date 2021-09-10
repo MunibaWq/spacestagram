@@ -6,5 +6,5 @@ export const getNasaAPOD = async () => {
       api_key: process.env.REACT_APP_NASA_API_KEY,
     },
   });
-  return res.data;
+  return res;
 };
