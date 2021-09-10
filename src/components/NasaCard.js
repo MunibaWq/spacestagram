@@ -1,5 +1,4 @@
 import React from "react";
-import clsx from "clsx";
 import {
   Card,
   CardHeader,
@@ -26,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
 
 const NasaCard = () => {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
 
   return (
     <Card className={classes.root}>
