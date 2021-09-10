@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { NasaCard } from ".";
-import { getNasaAPOD } from "../api/nasa";
+import { getNasaMars } from "../api/nasa";
 
 const CardContainer = () => {
   const [nasaInfo, setNasaInfo] = useState();
 
   useEffect(() => {
     const getNasaInfo = async () => {
-      const res = await getNasaAPOD();
-      setNasaInfo([res.data]);
+      const res = await getNasaMars();
+      setNasaInfo(res.data);
     };
     getNasaInfo();
   }, []);
