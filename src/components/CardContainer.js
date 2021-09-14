@@ -12,16 +12,12 @@ const CardContainer = () => {
     };
     getNasaInfo();
   }, []);
-
+  console.log(nasaInfo);
   return (
     <div>
       {nasaInfo
-        ? nasaInfo.map((array, index) => {
-            return (
-              <>
-                <NasaCard key={array.earth_date} array={array} />
-              </>
-            );
+        ? nasaInfo.map((array) => {
+            return <NasaCard key={array.img_src} array={array} />;
           })
         : null}
     </div>
