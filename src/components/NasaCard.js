@@ -23,25 +23,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const NasaCard = () => {
+const NasaCard = (props) => {
   const classes = useStyles();
-
+  const { camera, earth_date, img_src, rover } = props.array;
   return (
     <Card className={classes.root}>
-      <CardHeader
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
-      />
+      <CardHeader title={camera.full_name} subheader={earth_date} />
       <CardMedia
         className={classes.media}
-        image="/static/images/cards/paella.jpg"
+        image={img_src}
         title="Paella dish"
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
+          Rover Name: {rover.name}
+          <br />
+          Launch Date: {rover.launch_date}
+          <br />
+          Landing Date: {rover.landing_date}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
