@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { NasaCard } from ".";
 import { getNasaMars } from "../api/nasa";
+import { Grid, makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  cardContainer: {
+    padding: "24px",
+  },
+}));
 
 const CardContainer = () => {
+  const classes = useStyles();
   const [nasaInfo, setNasaInfo] = useState();
 
   useEffect(() => {
@@ -14,12 +22,18 @@ const CardContainer = () => {
   }, []);
 
   return (
-    <div>
-      {nasaInfo
-        ? nasaInfo.map((array) => {
-            return <NasaCard key={array.id} array={array} />;
-          })
-        : null}
+    <div className={classes.cardContainer}>
+      <Grid container spacing={3}>
+        {nasaInfo
+          ? nasaInfo.map((array, index) => {
+              return (
+                <Grid item xs={2} sm={4} key={index}>
+                  <NasaCard key={array.id} array={array} />
+                </Grid>
+              );
+            })
+          : null}
+      </Grid>
     </div>
   );
 };
