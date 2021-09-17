@@ -27,7 +27,7 @@ const CardContainer = () => {
         {nasaInfo
           ? nasaInfo.map((array, index) => {
               return (
-                <Grid item xs={2} sm={4} key={index}>
+                <Grid item xs={12} sm={4} key={index}>
                   <NasaCard key={array.id} array={array} />
                 </Grid>
               );
