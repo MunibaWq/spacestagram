@@ -16,10 +16,11 @@ import LinkIcon from "@material-ui/icons/Link";
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+    height: "650px",
   },
   media: {
     height: 0,
-    paddingTop: "56.25%", // 16:9
+    paddingTop: "100%",
   },
 }));
 
