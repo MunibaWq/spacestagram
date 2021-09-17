@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
+import LinkIcon from "@material-ui/icons/Link";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,23 +32,21 @@ const NasaCard = (props) => {
       <CardMedia
         className={classes.media}
         image={img_src}
-        title="Paella dish"
+        title={camera.full_name}
       />
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          Rover Name: {rover.name}
-          <br />
-          Launch Date: {rover.launch_date}
-          <br />
-          Landing Date: {rover.landing_date}
+        <Typography variant="body2" color="textSecondary" component="div">
+          <h3>Rover Name: {rover.name}</h3>
+          <p>Launch Date: {rover.launch_date}</p>
+          <p>Landing Date: {rover.landing_date}</p>
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label="like picture">
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
+        <IconButton aria-label="copy link">
+          <LinkIcon />
         </IconButton>
       </CardActions>
     </Card>
