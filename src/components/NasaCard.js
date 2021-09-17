@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardHeader,
@@ -24,8 +24,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const NasaCard = (props) => {
+  const [like, setLike] = useState(false);
   const classes = useStyles();
   const { camera, earth_date, img_src, rover } = props.array;
+
+  const toggleLike = () => {
+    let liked = like;
+    liked = !liked;
+    setLike(liked);
+  };
+
   return (
     <Card className={classes.root}>
       <CardHeader title={camera.full_name} subheader={earth_date} />
@@ -42,8 +50,12 @@ const NasaCard = (props) => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="like picture">
-          <FavoriteIcon />
+        <IconButton aria-label="like picture" onClick={() => toggleLike()}>
+          {like === true ? (
+            <FavoriteIcon style={{ color: "red" }} />
+          ) : (
+            <FavoriteIcon />
+          )}
         </IconButton>
         <IconButton aria-label="copy link">
           <LinkIcon />
