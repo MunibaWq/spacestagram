@@ -5,15 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node server/server.js"
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/MunibaWq/spacestagram.git"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/MunibaWq/spacestagram.git"
   }
 }
