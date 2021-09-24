@@ -2,10 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server",
   "scripts": {
     "test": "jest",
-    "start": "node backend/server.js"
+    "start": "nodemon backend/server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
   }
 }
