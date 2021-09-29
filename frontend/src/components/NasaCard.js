@@ -25,16 +25,26 @@ const useStyles = makeStyles((theme) => ({
 
 const NasaCard = (props) => {
   const [like, setLike] = useState(false);
+  const [copySuccess, setCopySuccess] = useState("");
   const classes = useStyles();
   const { camera, earth_date, img_src, rover } = props.array;
+
+  let title = `Rover Name: ${rover.name}`;
+  let captured = `Captured: ${earth_date}`;
 
   const toggleLike = () => {
     let liked = like;
     liked = !liked;
     setLike(liked);
   };
-  let title = `Rover Name: ${rover.name}`;
-  let captured = `Captured: ${earth_date}`;
+
+  const copyLink = (url) => {
+    let link = url.img_src;
+    navigator.clipboard.writeText(link);
+    setCopySuccess("Copied to clipboard!");
+    setTimeout(() => setCopySuccess(""), 3000);
+  };
+
   return (
     <Card className={classes.root}>
       <CardHeader title={title} subheader={captured} />
@@ -57,9 +67,16 @@ const NasaCard = (props) => {
             <FavoriteIcon />
           )}
         </IconButton>
-        <IconButton aria-label="copy link">
+        <IconButton
+          aria-label="copy link"
+          value={img_src}
+          onClick={() => copyLink({ img_src })}
+        >
           <LinkIcon />
         </IconButton>
+        <Typography variant="body2" color="textSecondary" component="div">
+          <p>{copySuccess}</p>
+        </Typography>
       </CardActions>
     </Card>
   );
