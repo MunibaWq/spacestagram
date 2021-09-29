@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NasaCard } from ".";
-import { getNasaMars } from "../api/nasa";
+import { getNasaMars } from "../axios";
 import { Grid, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
