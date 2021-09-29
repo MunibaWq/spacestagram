@@ -10,4 +10,4 @@ app.listen(5000, () => {
   console.log("express server is running on port 5000");
 });
 
-app.use("/", apiRouter);
+app.use("/api", apiRouter);

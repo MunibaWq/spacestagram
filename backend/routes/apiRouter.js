@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const nasaRouter = require("./Nasa");
+const nasaRouter = require("./nasaRoutes");
 
 router.use("/nasa", nasaRouter);
 

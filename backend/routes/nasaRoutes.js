@@ -15,7 +15,7 @@ router.get("/", async (req, res, next) => {
       }
     );
 
-    res.send(response.data.photos);
+    res.send(response.data);
   } catch (err) {
     next(err);
   }
