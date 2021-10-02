@@ -1,1 +1,1 @@
-export * from "./gets/gets";
+export * from './gets/gets';

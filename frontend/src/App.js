@@ -1,9 +1,9 @@
-import "./App.css";
-import { CardContainer, Navbar } from "./components";
+import './App.css';
+import { CardContainer, Navbar } from './components';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Navbar />
       <CardContainer />
     </div>

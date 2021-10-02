@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { NasaCard } from ".";
-import { getNasaMars } from "../axios";
-import { Grid, makeStyles } from "@material-ui/core";
+import React, { useEffect, useState } from 'react';
+import { NasaCard } from '.';
+import { getNasaMars } from '../axios';
+import { Grid, makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   cardContainer: {
-    padding: "24px",
-  },
+    padding: '24px'
+  }
 }));
 
 const CardContainer = () => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Card,
   CardHeader,
@@ -7,25 +7,25 @@ import {
   CardContent,
   IconButton,
   Typography,
-  makeStyles,
-} from "@material-ui/core";
+  makeStyles
+} from '@material-ui/core';
 
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import LinkIcon from "@material-ui/icons/Link";
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import LinkIcon from '@material-ui/icons/Link';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 345,
+    maxWidth: 345
   },
   media: {
     height: 0,
-    paddingTop: "100%",
-  },
+    paddingTop: '100%'
+  }
 }));
 
-const NasaCard = (props) => {
+const NasaCard = props => {
   const [like, setLike] = useState(false);
-  const [copySuccess, setCopySuccess] = useState("");
+  const [copySuccess, setCopySuccess] = useState('');
   const classes = useStyles();
   const { camera, earth_date, img_src, rover } = props.array;
 
@@ -38,11 +38,11 @@ const NasaCard = (props) => {
     setLike(liked);
   };
 
-  const copyLink = (url) => {
+  const copyLink = url => {
     let link = url.img_src;
     navigator.clipboard.writeText(link);
-    setCopySuccess("Copied to clipboard!");
-    setTimeout(() => setCopySuccess(""), 3000);
+    setCopySuccess('Copied to clipboard!');
+    setTimeout(() => setCopySuccess(''), 3000);
   };
 
   return (
@@ -54,27 +54,27 @@ const NasaCard = (props) => {
         title={camera.full_name}
       />
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="div">
+        <Typography variant='body2' color='textSecondary' component='div'>
           <p>Launch Date: {rover.launch_date}</p>
           <p>Landing Date: {rover.landing_date}</p>
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="like picture" onClick={() => toggleLike()}>
+        <IconButton aria-label='like picture' onClick={() => toggleLike()}>
           {like === true ? (
-            <FavoriteIcon style={{ color: "red" }} />
+            <FavoriteIcon style={{ color: 'red' }} />
           ) : (
             <FavoriteIcon />
           )}
         </IconButton>
         <IconButton
-          aria-label="copy link"
+          aria-label='copy link'
           value={img_src}
           onClick={() => copyLink({ img_src })}
         >
           <LinkIcon />
         </IconButton>
-        <Typography variant="body2" color="textSecondary" component="div">
+        <Typography variant='body2' color='textSecondary' component='div'>
           <p>{copySuccess}</p>
         </Typography>
       </CardActions>
