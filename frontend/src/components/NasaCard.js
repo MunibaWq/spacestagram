@@ -30,7 +30,7 @@ const NasaCard = props => {
   const classes = useStyles();
   const { camera, earth_date, img_src, rover } = props.array;
 
-  let title = `Rover Name: ${rover.name}`;
+  let title = `Rover Name ${rover.name}`;
 
   const toggleLike = () => {
     let liked = like;
@@ -55,7 +55,7 @@ const NasaCard = props => {
       <CardContent>
         <CardHeader title={title} />
         <Typography variant='body2' color='textSecondary' component='div'>
-          <p>Capture Date: {earth_date}</p>
+          <p>Taken On: {earth_date}</p>
           <p>Launch Date: {rover.launch_date}</p>
           <p>Landing Date: {rover.landing_date}</p>
         </Typography>
