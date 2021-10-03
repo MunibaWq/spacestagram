@@ -8,6 +8,9 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: 'cover',
     height: '50vh',
     color: '#f5f5f5'
+  },
+  content: {
+    paddingTop: '25vh'
   }
 }));
 
@@ -15,7 +18,10 @@ const Hero = () => {
   const classes = useStyles();
   return (
     <Box className={classes.hero}>
-      <Box>SPACESTAGRAM - Nasa Mars Rover Image Gallery</Box>
+      <Box className={classes.content}>
+        <Typography>SPACESTAGRAM</Typography>
+        <Typography>Mars rover image gallery built using NASA API</Typography>
+      </Box>
     </Box>
   );
 };
