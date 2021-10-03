@@ -5,12 +5,12 @@ import logo from '../assets/logo.svg';
 const useStyles = makeStyles(theme => ({
   appBar: {
     background: 'transparent',
-    color: 'black',
     boxShadow: 'none',
-    height: '120px',
+    height: '100px',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderBottom: '0.01em solid grey'
   }
 }));
 
