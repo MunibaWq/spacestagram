@@ -16,7 +16,8 @@ import LinkIcon from '@material-ui/icons/Link';
 const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: 345,
-    boxShadow: 'none'
+    boxShadow: 'none',
+    borderRadius: '0'
   },
   media: {
     height: 0,
