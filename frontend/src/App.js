@@ -1,10 +1,11 @@
 import './App.css';
-import { CardContainer, Navbar } from './components';
+import { CardContainer, Hero, Navbar } from './components';
 
 function App() {
   return (
     <div className='App'>
       <Navbar />
+      <Hero />
       <CardContainer />
     </div>
   );
