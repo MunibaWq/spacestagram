@@ -4,7 +4,7 @@ import heroImage from '../assets/hero.jpg';
 
 const useStyles = makeStyles(theme => ({
   hero: {
-    backgroundImage: ` url(${heroImage})`,
+    backgroundImage: ` linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${heroImage})`,
     backgroundSize: 'cover',
     height: '50vh',
     color: '#f5f5f5'

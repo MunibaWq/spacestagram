@@ -4,18 +4,20 @@ import logo from '../assets/logo.svg';
 
 const useStyles = makeStyles(theme => ({
   appBar: {
-    background: 'black',
-    // background: 'transparent',
+    background: 'transparent',
     color: 'black',
     boxShadow: 'none',
-    height: '100px'
+    height: '100px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 }));
 
 const Navbar = () => {
   const classes = useStyles();
   return (
-    <AppBar className={classes.appBar} position='static'>
+    <AppBar className={classes.appBar} position='absolute'>
       <Toolbar>
         <Typography
           variant='h5'
