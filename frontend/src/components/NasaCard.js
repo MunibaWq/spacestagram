@@ -15,7 +15,11 @@ import LinkIcon from '@material-ui/icons/Link';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 345
+    maxWidth: 345,
+    boxShadow: 'none',
+    borderBottom: '0.001em solid #ECECEC',
+    borderLeft: '0.001em solid #ECECEC',
+    borderRight: '0.001em solid #ECECEC'
   },
   media: {
     height: 0,
@@ -30,7 +34,6 @@ const NasaCard = props => {
   const { camera, earth_date, img_src, rover } = props.array;
 
   let title = `Rover Name: ${rover.name}`;
-  let captured = `Captured: ${earth_date}`;
 
   const toggleLike = () => {
     let liked = like;
@@ -47,14 +50,15 @@ const NasaCard = props => {
 
   return (
     <Card className={classes.root}>
-      <CardHeader title={title} subheader={captured} />
       <CardMedia
         className={classes.media}
         image={img_src}
         title={camera.full_name}
       />
       <CardContent>
+        <CardHeader title={title} />
         <Typography variant='body2' color='textSecondary' component='div'>
+          <p>Capture Date: {earth_date}</p>
           <p>Launch Date: {rover.launch_date}</p>
           <p>Landing Date: {rover.landing_date}</p>
         </Typography>
