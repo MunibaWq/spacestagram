@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    borderBottom: '0.01em solid grey'
+    borderBottom: '0.01em solid #53433B'
   }
 }));
 
