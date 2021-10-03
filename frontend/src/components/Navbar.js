@@ -1,19 +1,14 @@
 import React from 'react';
-import {
-  AppBar,
-  Box,
-  Toolbar,
-  Typography,
-  styled,
-  makeStyles
-} from '@material-ui/core';
-import heroImage from '../assets/hero.jpg';
+import { AppBar, Toolbar, Typography, makeStyles } from '@material-ui/core';
+import logo from '../assets/logo.svg';
 
 const useStyles = makeStyles(theme => ({
   appBar: {
-    background: 'transparent',
+    background: 'black',
+    // background: 'transparent',
     color: 'black',
-    boxShadow: 'none'
+    boxShadow: 'none',
+    height: '100px'
   }
 }));
 
@@ -27,7 +22,9 @@ const Navbar = () => {
           noWrap
           component='div'
           sx={{ flexGrow: 1, alignSelf: 'flex-end' }}
-        ></Typography>
+        >
+          <img src={logo} alt={logo} />
+        </Typography>
       </Toolbar>
     </AppBar>
   );
