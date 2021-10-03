@@ -7,7 +7,7 @@ const useStyles = makeStyles(theme => ({
     background: 'transparent',
     color: 'black',
     boxShadow: 'none',
-    height: '100px',
+    height: '120px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
