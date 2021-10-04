@@ -28,7 +28,7 @@ const CardContainer = () => {
 
   return (
     <div className={classes.cardContainer}>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} className={classes.grid}>
         {nasaInfo ? (
           nasaInfo.map((array, index) => {
             return (

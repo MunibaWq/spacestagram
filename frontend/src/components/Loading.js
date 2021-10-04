@@ -4,7 +4,6 @@ import LoadingIcon from '../assets/loading.svg';
 
 const useStyles = makeStyles(theme => ({
   spinner: {
-    position: 'relative',
     animation: '$spin 5s infinite'
   },
   '@keyframes spin': {
