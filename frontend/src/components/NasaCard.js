@@ -7,11 +7,14 @@ import {
   CardContent,
   IconButton,
   Typography,
-  makeStyles
+  makeStyles,
+  styled,
+  Collapse
 } from '@material-ui/core';
 
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LinkIcon from '@material-ui/icons/Link';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -25,13 +28,30 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const ExpandMore = styled(props => {
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
+    duration: theme.transitions.duration.shortest
+  })
+}));
+
 const NasaCard = props => {
   const [like, setLike] = useState(false);
   const [copySuccess, setCopySuccess] = useState('');
   const classes = useStyles();
+  const [expanded, setExpanded] = useState(false);
+
   const { camera, earth_date, img_src, rover } = props.array;
 
-  let title = `Rover Name ${rover.name}`;
+  let title = `Rover Name: ${rover.name}`;
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
 
   const toggleLike = () => {
     let liked = like;
@@ -53,14 +73,7 @@ const NasaCard = props => {
         image={img_src}
         title={camera.full_name}
       />
-      <CardContent>
-        <CardHeader title={title} />
-        <Typography variant='body2' color='textSecondary' component='div'>
-          <p>Taken On: {earth_date}</p>
-          <p>Launch Date: {rover.launch_date}</p>
-          <p>Landing Date: {rover.landing_date}</p>
-        </Typography>
-      </CardContent>
+
       <CardActions disableSpacing>
         <IconButton aria-label='like picture' onClick={() => toggleLike()}>
           {like === true ? (
@@ -76,10 +89,28 @@ const NasaCard = props => {
         >
           <LinkIcon />
         </IconButton>
+        <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label='show more'
+        >
+          <ExpandMoreIcon />
+        </ExpandMore>
         <Typography variant='body2' color='textSecondary' component='div'>
           <p>{copySuccess}</p>
         </Typography>
       </CardActions>
+      <Collapse in={expanded} timeout='auto' unmountOnExit>
+        <CardContent>
+          <CardHeader title={title} />
+          <Typography variant='body2' color='textSecondary' component='div'>
+            <p>Taken On: {earth_date}</p>
+            <p>Launch Date: {rover.launch_date}</p>
+            <p>Landing Date: {rover.landing_date}</p>
+          </Typography>
+        </CardContent>
+      </Collapse>
     </Card>
   );
 };
