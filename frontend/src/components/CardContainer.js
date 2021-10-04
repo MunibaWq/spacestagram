@@ -11,7 +11,8 @@ const useStyles = makeStyles(theme => ({
 
   grid: {
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    height: '100%'
   }
 }));
 
