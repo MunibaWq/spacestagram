@@ -18,12 +18,11 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 345,
     boxShadow: 'none',
-    borderRadius: '0'
+    borderRadius: '0',
+    width: '50vh'
   },
   media: {
-    height: 0,
     paddingTop: '100%'
   }
 }));
