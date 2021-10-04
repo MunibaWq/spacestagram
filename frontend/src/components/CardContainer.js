@@ -6,9 +6,11 @@ import { Grid, makeStyles } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
   cardContainer: {
     padding: '24px',
-    marginTop: '-60px'
+    display: 'flex',
+    justifyContent: 'center'
   },
-  grid: {
+
+  gridCards: {
     display: 'flex',
     justifyContent: 'center'
   }
@@ -28,11 +30,11 @@ const CardContainer = () => {
 
   return (
     <div className={classes.cardContainer}>
-      <Grid container spacing={3} className={classes.grid}>
+      <Grid container spacing={3}>
         {nasaInfo ? (
           nasaInfo.map((array, index) => {
             return (
-              <Grid item xs={4} key={index} className={classes.grid}>
+              <Grid item xs={4} key={index} className={classes.gridCards}>
                 <NasaCard key={array.id} array={array} />
               </Grid>
             );
