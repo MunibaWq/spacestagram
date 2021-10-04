@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
     color: '#f5f5f5'
   },
   content: {
-    paddingTop: '25vh'
+    paddingTop: '30vh'
   }
 }));
 
