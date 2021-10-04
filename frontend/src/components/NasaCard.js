@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     boxShadow: 'none',
     borderRadius: '0',
-    width: '50vh'
+    width: '50vw'
   },
   media: {
     paddingTop: '100%'
@@ -88,6 +88,9 @@ const NasaCard = props => {
         >
           <LinkIcon />
         </IconButton>
+        <Typography variant='body2' color='textSecondary' component='div'>
+          <p>{copySuccess}</p>
+        </Typography>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
@@ -96,9 +99,6 @@ const NasaCard = props => {
         >
           <ExpandMoreIcon />
         </ExpandMore>
-        <Typography variant='body2' color='textSecondary' component='div'>
-          <p>{copySuccess}</p>
-        </Typography>
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
