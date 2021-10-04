@@ -7,10 +7,10 @@ const useStyles = makeStyles(theme => ({
     animation: '$spin 5s infinite'
   },
   '@keyframes spin': {
-    '0%': {
+    from: {
       transform: 'rotate(180deg)'
     },
-    '100%': {
+    to: {
       transform: 'rotate(0deg)'
     }
   }
