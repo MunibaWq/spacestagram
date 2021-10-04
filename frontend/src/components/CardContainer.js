@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { NasaCard } from '.';
+import { Loading, NasaCard } from '.';
 import { getNasaMars } from '../axios';
 import { Grid, makeStyles } from '@material-ui/core';
 
@@ -25,15 +25,17 @@ const CardContainer = () => {
   return (
     <div className={classes.cardContainer}>
       <Grid container spacing={3}>
-        {nasaInfo
-          ? nasaInfo.map((array, index) => {
-              return (
-                <Grid item xs={3} key={index}>
-                  <NasaCard key={array.id} array={array} />
-                </Grid>
-              );
-            })
-          : null}
+        {nasaInfo ? (
+          nasaInfo.map((array, index) => {
+            return (
+              <Grid item xs={3} key={index}>
+                <NasaCard key={array.id} array={array} />
+              </Grid>
+            );
+          })
+        ) : (
+          <Loading />
+        )}
       </Grid>
     </div>
   );
