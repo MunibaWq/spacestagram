@@ -5,8 +5,7 @@ import { Grid, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   cardContainer: {
-    padding: '24px',
-    marginTop: '-10.5vw'
+    padding: '24px'
   },
 
   grid: {
