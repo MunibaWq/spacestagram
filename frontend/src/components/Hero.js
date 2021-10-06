@@ -6,11 +6,11 @@ const useStyles = makeStyles(theme => ({
   hero: {
     backgroundImage: ` linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${heroImage})`,
     backgroundSize: 'cover',
-    height: '70vh',
+    height: '100vh',
     color: '#f5f5f5'
   },
   content: {
-    paddingTop: '30vh'
+    paddingTop: '40vh'
   }
 }));
 
