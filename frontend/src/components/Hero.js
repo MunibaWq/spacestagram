@@ -19,8 +19,10 @@ const Hero = () => {
   return (
     <Box className={classes.hero}>
       <Box className={classes.content}>
-        <Typography>SPACESTAGRAM</Typography>
-        <Typography>
+        <Typography variant='h1'>
+          SPACE<strong>STAGRAM</strong>
+        </Typography>
+        <Typography variant='h5'>
           Mars rover image gallery built using{' '}
           <Link href='https://api.nasa.gov' underline='none' color='inherit'>
             {`NASA's API`}
