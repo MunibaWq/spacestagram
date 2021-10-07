@@ -6,11 +6,21 @@ const useStyles = makeStyles(theme => ({
   hero: {
     backgroundImage: ` linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${heroImage})`,
     backgroundSize: 'cover',
-    height: '100vh',
-    color: '#f5f5f5'
+    color: '#f5f5f5',
+    [theme.breakpoints.down('sm')]: {
+      minHeight: '50vh'
+    },
+    [theme.breakpoints.up('sm')]: {
+      minHeight: '100vh'
+    }
   },
   content: {
-    paddingTop: '40vh'
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: '25vh'
+    },
+    [theme.breakpoints.up('sm')]: {
+      paddingTop: '40vh'
+    }
   }
 }));
 
