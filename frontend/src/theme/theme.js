@@ -1,6 +1,6 @@
 import { createTheme } from '@material-ui/core';
-
-export const theme = createTheme({
+let theme = createTheme();
+theme = createTheme(theme, {
   overrides: {
     MuiCssBaseline: {
       '@global': {
@@ -9,5 +9,17 @@ export const theme = createTheme({
         }
       }
     }
+  },
+  palette: {
+    main: '#f5f5f5'
+  },
+  typography: {
+    h1: {
+      [theme.breakpoints.between('xs', 'sm')]: {
+        fontSize: '2.25rem'
+      }
+    }
   }
 });
+
+export default theme;
