@@ -3,11 +3,9 @@ import { CardContainer, Hero, Navbar } from './components';
 
 const useStyles = makeStyles(theme => ({
   app: {
-    margin: 0,
     textAlign: 'center',
     background: '#222121',
-    minHeight: '100vh',
-    color: theme.palette.primary.main
+    minHeight: '100vh'
   }
 }));
 
